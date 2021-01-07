@@ -1,1 +1,448 @@
-{ "event_name": "Metro", "event_description": "Ролевуха по вселенной Metro", "min_app_version": "1.0.0", "min_app_code_version": 1, "game_id": 1, "format_version": 1, "references": { "roles": [ { "id": 1, "name": "Сотрудник паспортного стола", "description": "Создает и редактирует паспорта персонажей" }, { "id": 2, "name": "Стражник", "description": "Контроль паспорта и фильтров" }, { "id": 3, "name": "Препод-химик", "description": "Обучение по химии" }, { "id": 4, "name": "Препод-инженер", "description": "Обучение по инженерному делу" }, { "id": 5, "name": "Препод-медик", "description": "Обучение по медицинскому делу" }, { "id": 6, "name": "Настройщик фильтра", "description": "Настройка фильтра" }, { "id": 7, "name": "Научный сотрудник", "description": "Мозг-теоретик, обладает знаниями во многих областях" }, { "id": 8, "name": "Житель", "description": "Житель метро" }, { "id": 9, "name": "Квестовый", "description": "Квестовый персонаж, может менять рейтинг за задания" }, { "id": 10, "name": "Комендант", "description": "Руководит охраной станции" }, { "id": 11, "name": "Начальник станции", "description": "Главный по станции" } ], "fractions": [ { "id": 1, "name": "Без фракции" }, { "id": 2, "name": "Ганза" }, { "id": 3, "name": "Красная линия" }, { "id": 4, "name": "Четвертый Рейх" }, { "id": 5, "name": "Венеция" }, { "id": 6, "name": "Кузнкцкий мост" }, { "id": 7, "name": "Бандиты" } ], "education_tree": [ { "reference": { "id": 0, "name": "Нет специального образования" }, "required_levels": [], "next_levels": [1, 2, 3] }, { "reference": { "id": 1, "name": "Медбрат" }, "required_levels": [0], "next_levels": [4] }, { "reference": { "id": 2, "name": "Младший научный сотрудник" }, "required_levels": [0], "next_levels": [5, 11] }, { "reference": { "id": 3, "name": "Помощник инженера" }, "required_levels": [0], "next_levels": [6] }, { "reference": { "id": 4, "name": "Лаборант-медик" }, "required_levels": [1], "next_levels": [7] }, { "reference": { "id": 5, "name": "Лаборант-химик" }, "required_levels": [2], "next_levels": [7, 8] }, { "reference": { "id": 11, "name": "Научный сотрудник" }, "required_levels": [2], "next_levels": [9] }, { "reference": { "id": 6, "name": "Инженер" }, "required_levels": [3], "next_levels": [12, 13, 14, 15] }, { "reference": { "id": 7, "name": "Хирург" }, "required_levels": [4], "next_levels": [19] }, { "reference": { "id": 7, "name": "Формацевт" }, "required_levels": [4, 5], "next_levels": [] }, { "reference": { "id": 8, "name": "Химик" }, "required_levels": [5], "next_levels": [17] }, { "reference": { "id": 9, "name": "Старший научный сотрудник" }, "required_levels": [11], "next_levels": [] }, { "reference": { "id": 12, "name": "Инженер-подрывник" }, "required_levels": [6], "next_levels": [] }, { "reference": { "id": 13, "name": "Инженер-механик" }, "required_levels": [6], "next_levels": [] }, { "reference": { "id": 14, "name": "Инженер-специалист по воде" }, "required_levels": [6, 8], "next_levels": [] }, { "reference": { "id": 15, "name": "Оружейник" }, "required_levels": [6], "next_levels": [] }, { "reference": { "id": 16, "name": "Аннестезиолог" }, "required_levels": [7], "next_levels": [] }, { "reference": { "id": 17, "name": "Химик 3 ступени" }, "required_levels": [8], "next_levels": [18] }, { "reference": { "id": 18, "name": "Химик 2 ступени" }, "required_levels": [17], "next_levels": [19] }, { "reference": { "id": 18, "name": "Химик 1 ступени" }, "required_levels": [18], "next_levels": [] }, { "reference": { "id": 19, "name": "Микрохирург" }, "required_levels": [7], "next_levels": [] } ] }, "structure": { "first_sector": 16, "fields": [ { "name": "nickname", "description": "Позывной", "format": "string", "size": 15, "read_role_ids": [], "write_role_ids": [ 1, 9 ] }, { "name": "rating", "description": "Рейтинг", "format": "number", "size": 2, "read_role_id": [], "write_role_id": [ 1, 9 ] }, { "name": "role", "description": "Роль", "format": "reference", "reference_key": "roles", "size": 1, "read_role_id": [], "write_role_id": [1] }, { "name": "fraction", "description": "Фракция", "format": "reference", "reference_key": "fractions", "size": 1, "read_role_id": [], "write_role_id": [1] }, { "name": "filter_time", "description": "Время фильтра в секундах", "format": "number", "size": 2, "read_role_id": [], "write_role_id": [1, 6] }, { "name": "filter_activation_timestamp", "description": "Время активации", "format": "number", "size": 8, "read_role_id": [], "write_role_id": [2] }, { "name": "speciality_1", "description": "Специальность 1", "format": "number", "size": 1, "read_role_id": 1, "write_role_id": 1 }, { "name": "speciality_2", "description": "Специальность 2", "format": "number", "size": 1, "read_role_id": 1, "write_role_id": 1 }, { "name": "speciality_3", "description": "Специальность 3", "format": "number", "size": 1, "read_role_id": 1, "write_role_id": 1 } ], "cards": [ { "id": 1, "name": "Карточка автоматчика" }, { "id": 2, "name": "Карточка курильщика" }, { "id": 3, "name": "Карточка курильщика станционная" } ] } }
+{
+    "event_name": "Metro",
+    "event_description": "Ролевуха по вселенной Metro",
+    "min_app_version": "1.0.0",
+    "min_app_code_version": 1,
+    "game_id": 1,
+    "format_version": 1,
+    "references": {
+      "roles": [
+        {
+          "id": 1,
+          "name": "Сотрудник паспортного стола",
+          "description": "Создает и редактирует паспорта персонажей"
+        },
+        {
+          "id": 2,
+          "name": "Стражник",
+          "description": "Контроль паспорта и фильтров"
+        },
+        {
+          "id": 3,
+          "name": "Препод-химик",
+          "description": "Обучение по химии"
+        },
+        {
+          "id": 4,
+          "name": "Препод-инженер",
+          "description": "Обучение по инженерному делу"
+        },
+        {
+          "id": 5,
+          "name": "Препод-медик",
+          "description": "Обучение по медицинскому делу"
+        },
+        {
+          "id": 6,
+          "name": "Настройщик фильтра",
+          "description": "Настройка фильтра"
+        },
+        {
+          "id": 7,
+          "name": "Научный сотрудник",
+          "description": "Мозг-теоретик, обладает знаниями во многих областях"
+        },
+        {
+          "id": 8,
+          "name": "Житель",
+          "description": "Житель метро"
+        },
+        {
+          "id": 9,
+          "name": "Квестовый",
+          "description": "Квестовый персонаж, может менять рейтинг за задания"
+        },
+        {
+          "id": 10,
+          "name": "Комендант",
+          "description": "Руководит охраной станции"
+        },
+        {
+          "id": 11,
+          "name": "Начальник станции",
+          "description": "Главный по станции"
+        }
+      ],
+      "fractions": [
+        {
+          "id": 1,
+          "name": "Без фракции"
+        },
+        {
+          "id": 2,
+          "name": "Ганза"
+        },
+        {
+          "id": 3,
+          "name": "Красная линия"
+        },
+        {
+          "id": 4,
+          "name": "Четвертый Рейх"
+        },
+        {
+          "id": 5,
+          "name": "Венеция"
+        },
+        {
+          "id": 6,
+          "name": "Кузнкцкий мост"
+        },
+        {
+          "id": 7,
+          "name": "Бандиты"
+        }
+      ],
+      "education_tree": [
+        {
+          "reference": {
+            "id": 0,
+            "name": "Нет специального образования"
+          },
+          "required_levels": [],
+          "next_levels": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "reference": {
+            "id": 1,
+            "name": "Медбрат"
+          },
+          "required_levels": [
+            0
+          ],
+          "next_levels": [
+            4
+          ]
+        },
+        {
+          "reference": {
+            "id": 2,
+            "name": "Младший научный сотрудник"
+          },
+          "required_levels": [
+            0
+          ],
+          "next_levels": [
+            5,
+            11
+          ]
+        },
+        {
+          "reference": {
+            "id": 3,
+            "name": "Помощник инженера"
+          },
+          "required_levels": [
+            0
+          ],
+          "next_levels": [
+            6
+          ]
+        },
+        {
+          "reference": {
+            "id": 4,
+            "name": "Лаборант-медик"
+          },
+          "required_levels": [
+            1
+          ],
+          "next_levels": [
+            7
+          ]
+        },
+        {
+          "reference": {
+            "id": 5,
+            "name": "Лаборант-химик"
+          },
+          "required_levels": [
+            2
+          ],
+          "next_levels": [
+            7,
+            8
+          ]
+        },
+        {
+          "reference": {
+            "id": 11,
+            "name": "Научный сотрудник"
+          },
+          "required_levels": [
+            2
+          ],
+          "next_levels": [
+            9
+          ]
+        },
+        {
+          "reference": {
+            "id": 6,
+            "name": "Инженер"
+          },
+          "required_levels": [
+            3
+          ],
+          "next_levels": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "reference": {
+            "id": 7,
+            "name": "Хирург"
+          },
+          "required_levels": [
+            4
+          ],
+          "next_levels": [
+            19
+          ]
+        },
+        {
+          "reference": {
+            "id": 7,
+            "name": "Формацевт"
+          },
+          "required_levels": [
+            4,
+            5
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 8,
+            "name": "Химик"
+          },
+          "required_levels": [
+            5
+          ],
+          "next_levels": [
+            17
+          ]
+        },
+        {
+          "reference": {
+            "id": 9,
+            "name": "Старший научный сотрудник"
+          },
+          "required_levels": [
+            11
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 12,
+            "name": "Инженер-подрывник"
+          },
+          "required_levels": [
+            6
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 13,
+            "name": "Инженер-механик"
+          },
+          "required_levels": [
+            6
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 14,
+            "name": "Инженер-специалист по воде"
+          },
+          "required_levels": [
+            6,
+            8
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 15,
+            "name": "Оружейник"
+          },
+          "required_levels": [
+            6
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 16,
+            "name": "Аннестезиолог"
+          },
+          "required_levels": [
+            7
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 17,
+            "name": "Химик 3 ступени"
+          },
+          "required_levels": [
+            8
+          ],
+          "next_levels": [
+            18
+          ]
+        },
+        {
+          "reference": {
+            "id": 18,
+            "name": "Химик 2 ступени"
+          },
+          "required_levels": [
+            17
+          ],
+          "next_levels": [
+            19
+          ]
+        },
+        {
+          "reference": {
+            "id": 18,
+            "name": "Химик 1 ступени"
+          },
+          "required_levels": [
+            18
+          ],
+          "next_levels": []
+        },
+        {
+          "reference": {
+            "id": 19,
+            "name": "Микрохирург"
+          },
+          "required_levels": [
+            7
+          ],
+          "next_levels": []
+        }
+      ]
+    },
+    "structure": {
+      "first_sector": 16,
+      "fields": [
+        {
+          "name": "nickname",
+          "description": "Позывной",
+          "format": "string",
+          "size": 15,
+          "read_role_ids": [],
+          "write_role_ids": [
+            1,
+            9
+          ]
+        },
+        {
+          "name": "rating",
+          "description": "Рейтинг",
+          "format": "number",
+          "size": 2,
+          "read_role_id": [],
+          "write_role_id": [
+            1,
+            9
+          ]
+        },
+        {
+          "name": "role",
+          "description": "Роль",
+          "format": "reference",
+          "reference_key": "roles",
+          "size": 1,
+          "read_role_id": [],
+          "write_role_id": [
+            1
+          ]
+        },
+        {
+          "name": "fraction",
+          "description": "Фракция",
+          "format": "reference",
+          "reference_key": "fractions",
+          "size": 1,
+          "read_role_id": [],
+          "write_role_id": [
+            1
+          ]
+        },
+        {
+          "name": "filter_time",
+          "description": "Время фильтра в секундах",
+          "format": "number",
+          "size": 2,
+          "read_role_id": [],
+          "write_role_id": [
+            1,
+            6
+          ]
+        },
+        {
+          "name": "filter_activation_timestamp",
+          "description": "Время активации",
+          "format": "number",
+          "size": 8,
+          "read_role_id": [],
+          "write_role_id": [
+            2
+          ]
+        },
+        {
+          "name": "speciality_1",
+          "description": "Специальность 1",
+          "format": "number",
+          "size": 1,
+          "read_role_id": 1,
+          "write_role_id": 1
+        },
+        {
+          "name": "speciality_2",
+          "description": "Специальность 2",
+          "format": "number",
+          "size": 1,
+          "read_role_id": 1,
+          "write_role_id": 1
+        },
+        {
+          "name": "speciality_3",
+          "description": "Специальность 3",
+          "format": "number",
+          "size": 1,
+          "read_role_id": 1,
+          "write_role_id": 1
+        }
+      ],
+      "cards": [
+        {
+          "id": 1,
+          "name": "Карточка автоматчика"
+        },
+        {
+          "id": 2,
+          "name": "Карточка курильщика"
+        },
+        {
+          "id": 3,
+          "name": "Карточка курильщика станционная"
+        }
+      ]
+    }
+  }
