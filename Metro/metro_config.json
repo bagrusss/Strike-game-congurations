@@ -338,7 +338,7 @@
     }
   ],
   "structure": {
-    "first_sector": 16,
+    "first_sector": 11,
     "fields": [
       {
         "name": "nickname",
