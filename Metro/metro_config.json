@@ -339,8 +339,28 @@
   ],
   "structure": {
     "first_sector": 11,
+    "system_fields": {
+      "format": {
+        "id": 1,
+        "name": "format_version",
+        "description": "Версия формата",
+        "format": "byte",
+        "size": 1,
+        "read_role_ids": [],
+        "write_role_ids": []
+      },
+      "timestamp": {
+        "id": 2,
+        "name": "timestamp",
+        "format": "timestamp",
+        "size": 4,
+        "read_role_ids": [],
+        "write_role_ids": []
+      }
+    },
     "fields": [
       {
+        "id": 0,
         "name": "nickname",
         "description": "Позывной",
         "format": "string",
@@ -349,6 +369,7 @@
         "write_role_ids": [1, 9]
       },
       {
+        "id": 1,
         "name": "rating",
         "description": "Рейтинг",
         "format": "number",
@@ -357,6 +378,7 @@
         "write_role_ids": [1, 9]
       },
       {
+        "id": 2,
         "name": "role",
         "description": "Роль",
         "format": "reference",
@@ -366,6 +388,7 @@
         "write_role_ids": [1]
       },
       {
+        "id": 3,
         "name": "fraction",
         "description": "Фракция",
         "format": "reference",
@@ -375,6 +398,7 @@
         "write_role_ids": [1]
       },
       {
+        "id": 4,
         "name": "filter_time",
         "description": "Время фильтра в секундах",
         "format": "number",
@@ -383,6 +407,7 @@
         "write_role_ids": [1, 6]
       },
       {
+        "id": 5,
         "name": "filter_activation_timestamp",
         "description": "Время активации",
         "format": "number",
