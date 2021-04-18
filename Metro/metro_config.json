@@ -339,8 +339,8 @@
   ],
   "structure": {
     "first_sector": 11,
-    "system_fields": {
-      "format": {
+    "system_fields": [
+      {
         "id": 1,
         "name": "format_version",
         "description": "Версия формата",
@@ -349,15 +349,24 @@
         "read_role_ids": [],
         "write_role_ids": []
       },
-      "timestamp": {
+      {
         "id": 2,
+        "name": "game_id",
+        "description": "Версия формата",
+        "format": "byte",
+        "size": 1,
+        "read_role_ids": [],
+        "write_role_ids": []
+      },
+      {
+        "id": 3,
         "name": "timestamp",
-        "format": "timestamp",
+        "format": "int",
         "size": 4,
         "read_role_ids": [],
         "write_role_ids": []
       }
-    },
+    ],
     "fields": [
       {
         "id": 0,
@@ -366,16 +375,22 @@
         "format": "string",
         "size": 15,
         "read_role_ids": [],
-        "write_role_ids": [1, 9]
+        "write_role_ids": [
+          1,
+          9
+        ]
       },
       {
         "id": 1,
         "name": "rating",
         "description": "Рейтинг",
-        "format": "number",
+        "format": "short",
         "size": 2,
         "read_role_ids": [],
-        "write_role_ids": [1, 9]
+        "write_role_ids": [
+          1,
+          9
+        ]
       },
       {
         "id": 2,
@@ -385,7 +400,9 @@
         "reference_key": "roles",
         "size": 1,
         "read_role_ids": [],
-        "write_role_ids": [1]
+        "write_role_ids": [
+          1
+        ]
       },
       {
         "id": 3,
@@ -395,49 +412,59 @@
         "reference_key": "fractions",
         "size": 1,
         "read_role_ids": [],
-        "write_role_ids": [1]
-      },
-      {
-        "id": 4,
-        "name": "filter_time",
-        "description": "Время фильтра в секундах",
-        "format": "number",
-        "size": 2,
-        "read_role_ids": [],
-        "write_role_ids": [1, 6]
+        "write_role_ids": [
+          1
+        ]
       },
       {
         "id": 5,
-        "name": "filter_activation_timestamp",
+        "name": "filter",
         "description": "Время активации",
-        "format": "number",
+        "format": "timer",
         "size": 8,
         "read_role_ids": [],
-        "write_role_ids": [2]
+        "write_role_ids": [
+          2
+        ]
       },
       {
+        "id": 6,
         "name": "speciality_1",
         "description": "Специальность 1",
-        "format": "number",
+        "format": "byte",
         "size": 1,
-        "read_role_ids": [1],
-        "write_role_ids": [1]
+        "read_role_ids": [
+          1
+        ],
+        "write_role_ids": [
+          1
+        ]
       },
       {
+        "id": 7,
         "name": "speciality_2",
         "description": "Специальность 2",
-        "format": "number",
+        "format": "byte",
         "size": 1,
-        "read_role_ids": [1],
-        "write_role_ids": [1]
+        "read_role_ids": [
+          1
+        ],
+        "write_role_ids": [
+          1
+        ]
       },
       {
+        "id": 8,
         "name": "speciality_3",
         "description": "Специальность 3",
-        "format": "number",
+        "format": "byte",
         "size": 1,
-        "read_role_ids": [1],
-        "write_role_ids": [1]
+        "read_role_ids": [
+          1
+        ],
+        "write_role_ids": [
+          1
+        ]
       }
     ],
     "cards": [
